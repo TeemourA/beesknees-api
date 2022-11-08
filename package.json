@@ -5,15 +5,15 @@
   "main": "build/index.js",
   "scripts": {
     "start": "node build/index.js",
-    "postinstall": "tsc",
-    "heroku-postbuild": "cd ./client && npm install && npm run build",
-    "start:dev": "env-cmd -f config/dev.env nodemon --exec ts-node src/index.ts",
-    "deploy": "git add . && git commit -m '.' && git push heroku master"
+    "build": "npm install && npx tsc",
+    "build:dev": "tsc",
+    "start:dev": "env-cmd -f config/dev.env nodemon --exec ts-node src/index.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.10",
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.8",
