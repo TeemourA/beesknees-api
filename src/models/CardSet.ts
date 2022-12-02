@@ -5,7 +5,7 @@ type ExtendedDocument = Document & { [key: string]: any };
 export interface ICardSet extends ExtendedDocument {
   title: string;
   url: string;
-  price?: number;
+  price?: string;
   image?: Buffer;
 }
 
