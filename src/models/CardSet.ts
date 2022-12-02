@@ -5,6 +5,7 @@ type ExtendedDocument = Document & { [key: string]: any };
 export interface ICardSet extends ExtendedDocument {
   title: string;
   url: string;
+  price?: number;
   image?: Buffer;
 }
 
@@ -20,6 +21,10 @@ const CardSetSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      trim: true,
+    },
+    price: {
+      type: String,
       trim: true,
     },
     image: {
